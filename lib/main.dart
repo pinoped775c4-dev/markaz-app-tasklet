@@ -45,7 +45,7 @@ class MarkazApp extends StatelessWidget {
             titleTextStyle: TextStyle(
                 fontSize: 18, fontWeight: FontWeight.w600, color: Colors.white),
           ),
-          cardTheme: CardTheme(
+          cardTheme: CardThemeData(
             elevation: 1,
             shadowColor: const Color(0x1F0B141A),
             shape: RoundedRectangleBorder(
