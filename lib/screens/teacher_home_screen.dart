@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../core/constants.dart';
 import '../state/app_state.dart';
 import 'track_screen.dart';
+import '../widgets/design.dart';
 
 /// الصفحة الرئيسية للمعلم: 4 مسارات
 class TeacherHomeScreen extends StatelessWidget {
@@ -13,7 +14,14 @@ class TeacherHomeScreen extends StatelessWidget {
     final state = context.watch<AppState>();
     return Scaffold(
       appBar: AppBar(
-        title: title: Text("مرحباً ${state.teacher!.name}"),
+        backgroundColor: WColors.wa,
+        titleSpacing: 0,
+        title: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text('مرحباً ${state.teacher!.name}',
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white)),
+          const Text('مساراتك الأربعة — اختر مساراً للدخول',
+              style: TextStyle(fontSize: 12, color: Colors.white70)),
+        ]),
         leadingWidth: 68,
         leading: Padding(
           padding: const EdgeInsets.all(6),
