@@ -13,7 +13,7 @@ class TeacherHomeScreen extends StatelessWidget {
     final state = context.watch<AppState>();
     return Scaffold(
       appBar: AppBar(
-        title: Text('مرحباً ${state.teacher!.name}'),
+        title: title: Text("مرحباً ${state.teacher!.name}"),
         leadingWidth: 68,
         leading: Padding(
           padding: const EdgeInsets.all(6),
