@@ -1,0 +1,24 @@
+# إعداد بناء تلقائي لـ Codemagic
+# ينتج ملف APK جاهز للتثبيت على الأندرويد
+
+workflows:
+  android-workflow:
+    name: مركز السنة — بناء أندرويد
+    max_build_duration: 30
+    instance_type: linux_x2
+    environment:
+      flutter: stable
+      group: default
+    scripts:
+      - name: تحميل حزم Flutter
+        script: flutter packages pub get
+      - name: بناء APK
+        script: flutter build apk --release
+    artifacts:
+      - build/app/outputs/**/*.apk
+      - build/**/outputs/**/mapping.txt
+    publishing:
+      email:
+        recipients:
+          - gemintio87@gmail.com
+        notify: true
